@@ -6,9 +6,9 @@ MANTA helps laptop refurbishers answer one practical question:
 
 > With the money and technician time available, which laptops should we repair, sell as-is, or use as parts donors?
 
-[Run the demo locally](#run-locally) · [MVP plan](PLAN.md)
+[Open the live demo](https://nitya-goyal.github.io/MANTA/) · [Run locally](#run-locally) · [MVP plan](PLAN.md)
 
-Run the project locally with no account or sign-in required. Keep the terminal running while using the local demo; closing the server makes the localhost link unavailable.
+The live demo is public and requires no sign-in. For local development, keep the terminal running while using the app; closing the server makes the localhost link unavailable.
 
 ## How it works
 
