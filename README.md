@@ -55,13 +55,15 @@ These are **illustrative estimates, not measured results or guaranteed profit**.
 
 | Screen | What you do |
 | --- | --- |
-| Overview | See the current batch, estimated recovery, and next steps. |
-| Inventory | Add, edit, remove, and search devices; record technician findings and estimated economics. |
+| Overview | Compare planned recovery with selling everything as-is, then open the next step directly. |
+| Inventory | Search and filter devices by suggested route; edit findings and costs, or undo an accidental removal. |
 | Market evidence | Save dated supplier quotes, resale asking prices, or completed-sale observations with source links. |
-| Recovery planner | Set budget and labour limits, configure one verified donor match, and compare the recommended allocation. |
-| Plan review | Inspect each decision, approve the plan locally, and export a CSV. |
+| Recovery planner | Try budget presets or enter your own limits; configure and verify one donor match. |
+| Plan review | Inspect each decision, acknowledge the review before approving locally, and export a CSV. |
 
 Evidence records do not automatically change device estimates. Review the source, then update the relevant values in Inventory. Asking prices are not proof of completed-sale prices.
+
+On small screens, device tables become labelled cards and all five navigation sections remain visible. Removals offer Undo for 15 seconds, until another data change is made. Changing a donor pair or editing either device clears its compatibility confirmation so the technician can review it again.
 
 ## Run locally
 
@@ -104,7 +106,9 @@ The planning engine uses **deterministic calculations**. Technicians remain resp
 dist/
   index.html       Application shell
   style.css        Responsive workspace styling
+  refinements.css  Readability, workflow, and mobile layouts
   app.mjs          Screens, forms, persistence, and CSV export
+  workspace.mjs    Dashboard comparison, filters, and guided review
   engine.mjs       Sample data and batch optimiser
 server.mjs         Local static server
 tests.mjs          Optimiser tests

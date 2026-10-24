@@ -26,7 +26,9 @@ jobs:
       - name: Test planner
         run: node --test tests.mjs
       - name: Check application syntax
-        run: node --check dist/app.mjs
+        run: |
+          node --check dist/app.mjs
+          node --check dist/workspace.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload application
