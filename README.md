@@ -8,7 +8,7 @@ MANTA helps laptop refurbishers answer one practical question:
 
 [Open the hosted MVP](https://manta-recovery.icyhinny9.chatgpt.site) · [MVP plan](PLAN.md)
 
-The hosted preview is private and requires an authorised ChatGPT sign-in. You can also run the project locally.
+The demo is public and opens without sign-in. You can also run the project locally.
 
 ## How it works
 
@@ -96,7 +96,7 @@ The engine enumerates feasible repair/sell combinations for **up to 12 devices**
 
 Budget covers parts and labour. Selling/warranty allowances reduce recovery separately. Donor removal consumes the configured time; any removal labour charge must be included in the recipient's labour estimate. A donor match replaces the recipient's full required part.
 
-This is a **deterministic planning engine**, not an AI diagnosis or a guarantee that a component is compatible.
+The planning engine uses **deterministic calculations**. Technicians remain responsible for diagnosis and compatibility checks.
 
 ## Project structure
 
@@ -109,7 +109,6 @@ dist/
 server.mjs         Local static server
 tests.mjs          Optimiser tests
 PLAN.md            MVP scope and acceptance criteria
-.openai/hosting.json  Hosted Site configuration
 ```
 
 The app uses HTML, CSS, and browser JavaScript with no application framework or runtime package dependencies. Node.js serves local development and runs tests.
@@ -118,7 +117,7 @@ The app uses HTML, CSS, and browser JavaScript with no application framework or 
 
 **Implemented:** editable sample inventory, manual market evidence, constrained optimisation, one verified donor match, local approval, and CSV export.
 
-**Not connected yet:** live TinyFish research, OCR, application user accounts, shared server persistence, billing, and workshop integrations. The hosted sign-in gate controls access to the preview; it does not provide shared application data.
+**Not connected yet:** live TinyFish research, OCR, application user accounts, shared server persistence, billing, and workshop integrations.
 
 - All application state is saved in the current browser's `localStorage`, not a shared database. It does not sync across browsers, devices, or local/hosted origins.
 - Clear the `manta-v1` localStorage entry to reset the sample. Export anything you want to retain first.
@@ -133,4 +132,4 @@ The app uses HTML, CSS, and browser JavaScript with no application framework or 
 3. Expand technician-verified compatibility records and donor allocation.
 4. Track actual repair and resale outcomes to compare estimates with results.
 
-The intended AI workflow gathers and explains evidence; deterministic calculations remain responsible for comparing costs and constraints.
+The planned research integration will gather source-backed market evidence for human review. The optimiser will continue to compare costs and constraints using deterministic calculations.
