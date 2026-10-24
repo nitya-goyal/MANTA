@@ -8,7 +8,7 @@ MANTA helps laptop refurbishers answer one practical question:
 
 [Run the demo locally](#run-locally) · [MVP plan](PLAN.md)
 
-Run the project locally with no account or sign-in required.
+Run the project locally with no account or sign-in required. Keep the terminal running while using the local demo; closing the server makes the localhost link unavailable.
 
 ## How it works
 
@@ -112,6 +112,10 @@ PLAN.md            MVP scope and acceptance criteria
 ```
 
 The app uses HTML, CSS, and browser JavaScript with no application framework or runtime package dependencies. Node.js serves local development and runs tests.
+
+## Deployment
+
+The GitHub Pages workflow tests the planner and publishes only the application files in `dist/` after each push to `main`. Source documentation and local deployment settings are not part of the published artifact. GitHub Pages hosts the browser application; a future live research integration will require a separate server endpoint.
 
 ## Current status and limitations
 
