@@ -141,3 +141,6 @@ The GitHub Pages workflow tests the planner and publishes only the application f
 4. Track actual repair and resale outcomes to compare estimates with results.
 
 The planned research integration will gather source-backed market evidence for human review. The optimiser will continue to compare costs and constraints using deterministic calculations.
+
+MANTA uses a custom manta-ray logo and an optional Manta Guide with screen-specific workshop tips. The guide runs locally without an API or subscription.
+

@@ -1,8 +1,10 @@
+import {mountGuide} from './guide.mjs';
 const money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let query='',route='';
 
 export function enhanceWorkspace(state,plan,page,{save,persist,render,toast,modal}){
+ mountGuide(page);
  const main=document.querySelector('#app');
  document.title=({overview:'Overview',inventory:'Inventory',evidence:'Market evidence',planner:'Recovery planner',review:'Plan review'}[page])+' · MANTA';
  if(page!=='overview'){
