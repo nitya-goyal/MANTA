@@ -1,4 +1,4 @@
-import {enhanceWorkspace} from './workspace.mjs';
+import {enhanceWorkspace} from './workspace.mjs?v=ray1';
 import {seed,optimise} from './engine.mjs';
 const $=s=>document.querySelector(s), money=n=>'₹'+Math.round(n).toLocaleString('en-IN'), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let state=structuredClone(seed), storageWarning=false;
