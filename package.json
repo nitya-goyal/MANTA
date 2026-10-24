@@ -1,1 +1,13 @@
-{"name":"manta-mvp","private":true,"type":"module","scripts":{"test":"node --test tests.mjs","start":"node server.mjs"}}
+{
+  "name": "manta-mvp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests.mjs data.test.mjs backend.test.mjs",
+    "start": "node server.mjs",
+    "workshop": "node backend.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

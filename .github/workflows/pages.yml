@@ -23,13 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Test planner
-        run: node --test tests.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test application and backend
+        run: npm test
       - name: Check application syntax
         run: |
           node --check dist/app.mjs
           node --check dist/workspace.mjs
           node --check dist/guide.mjs
+          node --check dist/transfers.mjs
+          node --check backend.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload application

@@ -14,3 +14,7 @@ node_modules/
 *.zip
 .DS_Store
 Thumbs.db
+
+# Local workshop database
+/data/
+*.sqlite*

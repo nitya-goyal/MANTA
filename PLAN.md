@@ -21,3 +21,19 @@ Inputs recalculate feasible plans; zero budget preserves sell-as-is choices; don
 
 ## Explicit next phase
 Live TinyFish research requires server-side credentials, a research endpoint, source extraction and review. Authentication, shared database, OCR, automated purchasing, subscriptions and multi-workshop access are outside this local-state MVP. Do not describe fixture evidence as live research.
+
+## Shared workshop implementation milestones
+
+User selected a shared backend, prepared locally before choosing hosting.
+
+- [x] Versioned JSON workspace backup/restore and shared input validation.
+- [x] Local SQLite persistence, workshop registration and sign-in.
+- [x] Expiring sessions, owner invitations, member isolation and revision conflict checks.
+- [x] Browser UI for explicit shared save/load and backup before replacement.
+- [ ] Evidence editing and clearer review of estimates.
+- [ ] Actual repair/resale outcomes and estimate comparison.
+- [ ] Member management, password recovery, email verification and deployment hardening.
+- [ ] Choose hosting, configure production storage/backups and deploy shared mode.
+- [ ] Optional live research endpoint after provider and cost decisions.
+
+The original local-state MVP scope above describes the public demo; the shared-workshop milestones extend it.

@@ -83,7 +83,7 @@ Run the optimiser checks:
 npm test
 ```
 
-The six tests cover budget and time feasibility, donor accounting, zero-resource behaviour, invalid donor matches, an empty batch, and the effect of increasing the budget.
+The planner tests cover budget and time feasibility, donor accounting, zero-resource behaviour, invalid donor matches, an empty batch, and the effect of increasing the budget.
 
 ## How the optimiser calculates value
 
@@ -125,9 +125,9 @@ The GitHub Pages workflow tests the planner and publishes only the application f
 
 **Implemented:** editable sample inventory, manual market evidence, constrained optimisation, one verified donor match, local approval, and CSV export.
 
-**Not connected yet:** live TinyFish research, OCR, application user accounts, shared server persistence, billing, and workshop integrations.
+**Not connected yet:** live research, OCR, hosted accounts, billing, and workshop integrations. Local workshop accounts and shared SQLite persistence are available in the backend prototype.
 
-- All application state is saved in the current browser's `localStorage`, not a shared database. It does not sync across browsers, devices, or local/hosted origins.
+- In the public demo, application state is saved in the current browser's `localStorage`, not a shared database. It does not sync across browsers, devices, or local/hosted origins.
 - Clear the `manta-v1` localStorage entry to reset the sample. Export anything you want to retain first.
 - Approving a plan records a local decision. It does not purchase parts or dispatch work. Editing planning inputs invalidates approval.
 - The MVP supports one donor relationship per batch, not a general multi-component compatibility graph.
@@ -144,3 +144,20 @@ The planned research integration will gather source-backed market evidence for h
 
 MANTA uses a custom manta-ray logo and an optional Manta Guide with screen-specific workshop tips. The guide runs locally without an API or subscription.
 
+
+## Local shared workshop prototype
+
+Requires Node.js 22.13 or newer (Node 22 uses experimental built-in SQLite). Run `npm run workshop` and open http://127.0.0.1:4174. The server binds only to loopback and serves the frontend and API together. `npm start` still runs the standalone demo on port 4173.
+
+1. Download a JSON workspace backup if you want to transfer a demo batch.
+2. Choose **Create / join workshop**. Create a workshop with an email and a unique password of at least 12 characters, or enter a teammate's invitation code. New workshops begin empty.
+3. Edit inventory or restore a backup. Changes are an in-memory draft until **Save to workshop** is clicked.
+4. Use **Load latest** to retrieve a teammate's changes. Conflicting revisions are rejected; back up your draft before loading the latest version. There is no automatic merge.
+5. Owners can generate a single-use invitation valid for 24 hours. Share it privately. Members can read and save the workshop but cannot issue invitations.
+6. After reload, use **Resume session** to load the saved workspace. Sign out discards unsaved draft changes after confirmation.
+
+The database is `data/manta.sqlite` and is excluded from Git. Stop the server before copying the entire `data/` directory for a database backup. JSON workspace backups contain inventory, evidence and planning limits; they do not contain accounts or invitations. Restoring a JSON backup clears plan approval for review.
+
+Passwords use salted scrypt hashes. Sessions use hashed random tokens with HttpOnly, SameSite cookies and a seven-day expiry; writes require a matching Origin. Queries are parameterized and workshop access comes from the authenticated user's membership. Workspace saves record an audit event and enforce a revision check. `npm test` covers account isolation, invitation reuse, session invalidation, restart persistence, conflicting writes and malformed data.
+
+This is a local prototype, not a deployed authentication service. Public hosting, TLS configuration, email verification, password recovery, member removal, production rate limiting, database migration tooling and operational backups remain to be implemented. GitHub Pages publishes only the demo; it cannot run this backend. No paid services or API integrations are configured.
