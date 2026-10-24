@@ -1,4 +1,4 @@
-import {mountGuide} from './guide.mjs?v=workshop1';
+import {mountGuide} from './guide.mjs?v=showcase1';
 const money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let query='',route='';

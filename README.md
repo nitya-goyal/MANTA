@@ -10,6 +10,12 @@ MANTA helps laptop refurbishers answer one practical question:
 
 The live demo is public and requires no sign-in. For local development, keep the terminal running while using the app; closing the server makes the localhost link unavailable.
 
+## Showcase
+
+[Start the guided demo](https://nitya-goyal.github.io/MANTA/?demo=1#overview) · [Three-minute showcase plan](SHOWCASE.md) · [Project workbook](https://docs.google.com/spreadsheets/d/1oj8FATKj8CYzhGJNuoylcd8ZvrJUCBWpSEDQVZoAVKk/edit#gid=427612516)
+
+The guided demo uses a temporary sample workspace and preserves your saved batch. Refresh resets the sample; Exit returns to your regular workspace. The Drive workbook is maintained separately and retains its existing access permissions.
+
 ## How it works
 
 Imagine you own five faulty laptops, but have only ₹6,500 for repairs. Some repairs add more value than others. A laptop that is too expensive to repair may still contain a healthy part that can restore another device.

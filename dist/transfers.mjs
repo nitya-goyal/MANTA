@@ -2,6 +2,7 @@ import {makeBackup,readBackup} from './data.mjs';
 let account=null;
 async function request(path,method='GET',body){const response=await fetch('/api/'+path,{method,headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});const data=await response.json();if(!response.ok)throw new Error(data.error||'Request failed.');return data;}
 export function mountTransfers(state,{replace,toast}){
+ if(window.MANTA_DEMO){const label=document.querySelector('#storage-label');if(label)label.textContent='Temporary demo';return;}
  const storageLabel=document.querySelector('#storage-label');if(storageLabel)storageLabel.textContent=window.MANTA_BACKEND?(account?'Workshop draft':'Local server'):'Browser storage';
  const name=document.querySelector('.workspace strong');if(name)name.textContent=account?account.workshop:'Northstar Refurbishing';
  const panel=document.createElement('section');panel.className='panel transfer-panel';panel.setAttribute('aria-label','Workspace storage');

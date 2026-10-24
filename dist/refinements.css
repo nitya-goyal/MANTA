@@ -50,3 +50,5 @@ header{gap:12px}header>div{margin-left:auto}.guide-trigger{display:inline-flex;a
 @media(max-width:720px){header{height:auto;min-height:60px;flex-wrap:wrap;padding:10px 16px;gap:8px}header>div{font-size:10px}header .avatar{display:none}.guide-trigger{font-size:11px;padding:4px 10px;min-height:36px}.guide-trigger img{width:24px}.guide-dialog{padding:22px}.guide-dialog .dialog-actions{justify-content:flex-start}}
 
 .transfer-panel{margin-top:26px}.transfer-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.transfer-panel p{line-height:1.7}
+
+.showcase-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 24px;margin-bottom:24px;border:1px solid #bfd8cf;border-radius:12px;background:#f0f7f3}.showcase-banner p{max-width:720px;line-height:1.6;margin:8px 0}.showcase-banner small{color:#526b63;font-size:12px}.showcase-actions{display:flex;flex-wrap:wrap;gap:10px;flex-shrink:0;align-items:center}@media(max-width:900px){.showcase-banner{align-items:flex-start;flex-direction:column;padding:18px}}

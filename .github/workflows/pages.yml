@@ -33,6 +33,7 @@ jobs:
           node --check dist/app.mjs
           node --check dist/workspace.mjs
           node --check dist/guide.mjs
+          node --check dist/showcase.mjs
           node --check dist/transfers.mjs
           node --check backend.mjs
       - name: Configure Pages
