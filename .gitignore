@@ -1,0 +1,16 @@
+# Local deployment identity (not application source)
+/.*/hosting.json
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+
+# Dependencies, logs, and deployment archives
+node_modules/
+*.log
+*.zip
+.DS_Store
+Thumbs.db

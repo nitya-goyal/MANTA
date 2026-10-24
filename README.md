@@ -6,9 +6,9 @@ MANTA helps laptop refurbishers answer one practical question:
 
 > With the money and technician time available, which laptops should we repair, sell as-is, or use as parts donors?
 
-[Open the hosted MVP](https://manta-recovery.icyhinny9.chatgpt.site) · [MVP plan](PLAN.md)
+[Run the demo locally](#run-locally) · [MVP plan](PLAN.md)
 
-The demo is public and opens without sign-in. You can also run the project locally.
+Run the project locally with no account or sign-in required.
 
 ## How it works
 
